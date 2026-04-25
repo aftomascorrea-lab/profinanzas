@@ -1122,15 +1122,15 @@ export default function App() {
   useEffect(()=>{ injectFonts(); },[]);
 
   useEffect(()=>{
-    (async()=>{
-      try{const r=await window.storage.get("fp_v4");if(r?.value)setData(JSON.parse(r.value));}catch{}
-      setReady(true);
-    })();
+    try{
+      const s=localStorage.getItem("fp_v4");
+      if(s)setData(JSON.parse(s));
+    }catch{}
+    setReady(true);
   },[]);
-
   useEffect(()=>{
     if(!ready)return;
-    window.storage.set("fp_v4",JSON.stringify(data)).catch(()=>{});
+    try{localStorage.setItem("fp_v4",JSON.stringify(data));}catch{}
   },[data,ready]);
 
   const go=(id)=>{setSec(id);setMenu(false);};
