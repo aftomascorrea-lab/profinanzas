@@ -1,4 +1,3 @@
-cat > /home/claude/App_fixed.jsx << 'ENDOFFILE'
 import{useState,useEffect,useMemo}from"react";
 import{PieChart,Pie,Cell,BarChart,Bar,XAxis,YAxis,Tooltip,ResponsiveContainer,Legend,AreaChart,Area,LineChart,Line}from"recharts";
 import{Home,TrendingUp,TrendingDown,CreditCard,Target,Calculator,BarChart2,Plus,Trash2,ChevronDown,Activity,Wallet,ArrowUp,ArrowDown}from"lucide-react";
